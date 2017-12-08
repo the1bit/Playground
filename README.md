@@ -8,8 +8,8 @@ You can use this page and codes [from GitHub](https://github.com/the1bit/Playgro
 
 ## Contents by technologies
 
-### --- Python
-#### [ListAzureVMs](https://github.com/the1bit/Playground/tree/master/Python)
+### Python
+#### - [ListAzureVMs](https://github.com/the1bit/Playground/tree/master/Python)
 * Prerequisites:
 	* Python 3.6
 	* Azure SDK for Python
