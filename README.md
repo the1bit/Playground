@@ -6,6 +6,16 @@ If you have any questions please do not hesitate to contact me. I'd appreciate a
 
 You can use this page and codes [from GitHub](https://github.com/the1bit/Playground) as well.
 
+## Contents by technologies
+
+### Python
+#### [ListAzureVMs](./Python)
+* Prerequivisites:
+	* Python 3.6
+	* Azure SDK for Python
+
+
+
 ## Related topics
 [AzureSolutions on Git](https://the1bit.github.io/AzureSolutions/)
 
