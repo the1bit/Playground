@@ -4,12 +4,12 @@ My name is Tibor Kiss and I would like to share some useful knowledge with you w
 
 If you have any questions please do not hesitate to contact me. I'd appreciate any kind of feedback from your side.'
 
-You can use this page and codes [from GitHub](https://github.com/the1bit/Playground/master/README.md) as well.
+You can use this page and codes [from GitHub](https://github.com/the1bit/playground/master/README.md) as well.
 
 ## About me
-Name: Tibor Kiss
-Blog / Homepage: [http://www.the1bit.hu](http://www.the1bit.hu)
-Cerifications:
-* Microsoft Certified Solutions Associate: Cloud Platform (MCSA)
-* TOGAF 9 Foundation certified Person
+* Name: Tibor Kiss
+*Blog / Homepage: [www.the1bit.hu](http://www.the1bit.hu)
+*Cerifications:
+	* Microsoft Certified Solutions Associate: Cloud Platform (MCSA)
+	* TOGAF 9 Foundation certified Person
 
