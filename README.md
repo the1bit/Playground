@@ -6,10 +6,13 @@ If you have any questions please do not hesitate to contact me. I'd appreciate a
 
 You can use this page and codes [from GitHub](https://github.com/the1bit/playground/master/README.md) as well.
 
+## Related topics
+[AzureSolutions on Git](https://the1bit.github.io/AzureSolutions/)
+
 ## About me
 * Name: Tibor Kiss
-*Blog / Homepage: [www.the1bit.hu](http://www.the1bit.hu)
-*Cerifications:
-	* Microsoft Certified Solutions Associate: Cloud Platform (MCSA)
+* Blog / Homepage: [www.the1bit.hu](http://www.the1bit.hu)
+* Cerifications:
+	* Microsoft Certified Solutions Associate: *Cloud Platform* (MCSA)
 	* TOGAF 9 Foundation certified Person
 
