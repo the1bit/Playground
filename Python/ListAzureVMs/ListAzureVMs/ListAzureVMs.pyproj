@@ -21,7 +21,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="lib\azure.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="lib\core.py" />
+    <Compile Include="lib\logger.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ListAzureVMs.py" />
   </ItemGroup>
   <ItemGroup>

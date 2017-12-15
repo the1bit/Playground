@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Python",
+    "\\Python\\Common",
+    "\\Python\\Common\\lib",
+    "\\Python\\ListAzureVMs",
+    "\\Python\\ListAzureVMs\\ListAzureVMs"
   ],
+  "SelectedNode": "\\Python\\Common\\lib\\core.py",
   "PreviewInSolutionExplorer": false
 }
