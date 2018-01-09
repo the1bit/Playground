@@ -21,7 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="lib\azure.py">
+    <Compile Include="lib\bitazure.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="lib\core.py" />

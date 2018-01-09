@@ -44,11 +44,11 @@ if isFunctionsExist:
 
 logger.info("Load Azure module")
 ##### Load Azure Module
-azureModule = "./lib/azure.py"
+azureModule = "./lib/bitazure.py"
 isFunctionsExist = os.path.isfile("{0}".format(azureModule))
 if isFunctionsExist:
 	# Import functions
-	from lib.azure import *
+	from lib.bitazure import *
 
 
 

@@ -28,7 +28,7 @@ def cloud_list(options):
 	return int(0)
 
 # Manage login to Azure
-def ManageLogin():
+def manageLogin():
 	global credentials
 	global subscription_client 
 	# Prefered way for Azure connection is the use of ServicePrincipalCredentials
@@ -87,13 +87,24 @@ def getVMs(subscription):
 
 def listVMs(cloud):
 	# Manage login to Azure
-	ManageLogin()
+	manageLogin()
 
 	subscription_list = subscription_client.subscriptions.list()
 	for subsc in subscription_list:
 		print("---> Subscription: '{0}' - {1}".format(subsc.display_name, subsc.subscription_id))
 		getVMs(subsc.subscription_id)
 
+
+def selectSubscription(requiredID):
+	# Manage login to Azure
+	manageLogin()
+
+	subscription_list = subscription_client.subscriptions.list()
+	for subsc in subscription_list:
+		if requiredID == subsc.subscription_id:
+			return True
+
+		return False
 
 #########################################################################
 ### This part will be executed every time when the file is included #####
@@ -106,6 +117,7 @@ cloud = choices[cloud_list(choices)]
 print("%s has been choosen by you" %(cloud))
 
 # Import Azure packages
+## MSREST for different clouds
 if cloud == "AZURE_GERMAN_CLOUD":
 	try:
 		from msrestazure.azure_cloud import AZURE_GERMAN_CLOUD  as cloud_environment
@@ -137,15 +149,21 @@ else:
 		pip.main(['install', '--user', 'msrestazure'])
 		from msrestazure.azure_cloud import AZURE_GERMAN_CLOUD as cloud_environment
 
+## MS REST Credentials
 from msrestazure.azure_active_directory import UserPassCredentials
 from msrestazure.azure_active_directory import ServicePrincipalCredentials
 try:
+	# Try to load SubscriptionClient
 	from azure.mgmt.resource.subscriptions import SubscriptionClient
 except:
+	# Install SubscriptionClient
 	pip.main(['install', '--user', 'azure'])
 	from azure.mgmt.resource.subscriptions import SubscriptionClient
 
+## Load Clients
+### Resource client
 from azure.mgmt.resource import ResourceManagementClient
+### Computer client
 from azure.mgmt.compute import ComputeManagementClient
 
 #########################################################################
