@@ -10,8 +10,9 @@ You can use this page and codes [from GitHub](https://github.com/the1bit/Playgro
 Contents by technologies
 --------
 * Python
-	* Jump to ListAzureVMs_
-	.. _ListAzureVMs: https://github.com/the1bit/Playground/tree/master/Python
+	* ListAzureVMs_
+		* Description:
+		List all of VMs from that Tenant you logged in.
 		* Prerequisites:
 			* Python 3.6
 			* Azure SDK for Python
@@ -28,3 +29,4 @@ Contents by technologies
 	* Microsoft Certified Solutions Associate: *Cloud Platform* (MCSA)
 	* TOGAF 9 Foundation certified Person
 
+.. _ListAzureVMs: https://github.com/the1bit/Playground/tree/master/Python
