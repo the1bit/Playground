@@ -3,7 +3,7 @@ Welcome to my GitHub page
 
 My name is Tibor Kiss and I would like to share some useful knowledge with you which is related different fields of area of IT. I hope you can use them in your job or for your learning.
 
-If you have any questions please do not hesitate to contact me. I'd appreciate any kind of feedback from your side.'
+If you have any questions please do not hesitate to contact me. I'd appreciate any kind of feedback from your side.
 
 You can use this page and codes from `my GitHub`_ as well.
 
