@@ -5,32 +5,33 @@ My name is Tibor Kiss and I would like to share some useful knowledge with you w
 
 If you have any questions please do not hesitate to contact me. I'd appreciate any kind of feedback from your side.'
 
-You can use this page and codes [from GitHub](https://github.com/the1bit/Playground) as well.
-
-## Contents by technologies
-
-### Python
-#### - [ListAzureVMs](https://github.com/the1bit/Playground/tree/master/Python)
-* Prerequisites:
-	* Python 3.6
-	* Azure SDK for Python
+You can use this page and codes from `my GitHub`_ as well.
 
 Contents by technologies
 --------
+
 * Python
-	* <a href="https://github.com/the1bit/Playground/tree/master/Python" target="_blank">ListAzureVMs</a>
+	* ListAzureVMs_
+		* Description: List all of VMs from that Tenant you logged in.
 		* Prerequisites:
 			* Python 3.6
 			* Azure SDK for Python
 
 
-## Related topics
-[AzureSolutions on Git](https://the1bit.github.io/AzureSolutions/)
 
-## About me
+Related topics
+--------
+`AzureSolutions on Git`_
+
+About me
+--------
 * Name: Tibor Kiss
-* Blog / Homepage: [www.the1bit.hu](http://www.the1bit.hu)
+* Blog / Homepage: `www.the1bit.hu`_
 * Cerifications:
 	* Microsoft Certified Solutions Associate: *Cloud Platform* (MCSA)
 	* TOGAF 9 Foundation certified Person
 
+.. _ListAzureVMs: https://github.com/the1bit/Playground/tree/master/Python
+.. _AzureSolutions on Git: https://the1bit.github.io/AzureSolutions/
+.. _www.the1bit.hu: http://www.the1bit.hu
+.. _my GitHub: https://github.com/the1bit/Playground
