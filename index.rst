@@ -32,4 +32,4 @@ About me
 	* TOGAF 9 Foundation certified Person
 
 .. _ListAzureVMs: https://github.com/the1bit/Playground/tree/master/Python
-.. AzureSolutions on Git: https://the1bit.github.io/AzureSolutions/
+.. _AzureSolutions on Git: https://the1bit.github.io/AzureSolutions/
