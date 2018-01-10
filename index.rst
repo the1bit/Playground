@@ -21,7 +21,7 @@ Contents by technologies
 
 Related topics
 --------
-`AzureSolutions on Git`
+`AzureSolutions on Git`_
 
 About me
 --------
@@ -32,4 +32,4 @@ About me
 	* TOGAF 9 Foundation certified Person
 
 .. _ListAzureVMs: https://github.com/the1bit/Playground/tree/master/Python
-.. _AzureSolutions on Git: https://the1bit.github.io/AzureSolutions/
+.. AzureSolutions on Git: https://the1bit.github.io/AzureSolutions/
