@@ -11,12 +11,23 @@ You can use this page and codes from `my GitHub <https://github.com/the1bit/Play
 Contents by technologies
 --------
 
-* Python
-	* `ListAzureVMs <https://github.com/the1bit/Playground/tree/master/Python>`_ 
-		* Description: List all of VMs from that Tenant you logged in.
-		* Prerequisites:
-			* Python 3.6
-			* Azure SDK for Python
+Azure
+^^^^^^^^
+* `MerryXMas <https://github.com/the1bit/Playground/tree/master/Azure/MerryXMas>`_
+	* Description: I wish you a Merry XMAS and a Happy New Year for 2018.
+	* Prerequisites:
+		* Azure access
+			* Azure Portal
+			* Azure-Cli 2.0
+			* PowerShell with Azure
+
+Python
+^^^^^^^^
+* `ListAzureVMs <https://github.com/the1bit/Playground/tree/master/Python/ListAzureVMs>`_
+	* Description: List all of VMs from that Tenant you logged in.
+	* Prerequisites:
+		* Python 3.6
+		* Azure SDK for Python
 
 
 
