@@ -7,13 +7,13 @@ If you have any questions please do not hesitate to contact me. I'd appreciate a
 
 You can use this page and codes [from GitHub](https://github.com/the1bit/Playground) as well.
 
-## Contents by technologies
-
-### Python
-#### - [ListAzureVMs](https://github.com/the1bit/Playground/tree/master/Python)
-* Prerequisites:
-	* Python 3.6
-	* Azure SDK for Python
+Contents by technologies
+--------
+* Python
+	* [ListAzureVMs](https://github.com/the1bit/Playground/tree/master/Python)
+		* Prerequisites:
+			* Python 3.6
+			* Azure SDK for Python
 
 
 
