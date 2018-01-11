@@ -1,4 +1,4 @@
-====================
+=========================
 Welcome to my GitHub page
 =========================
 
@@ -31,8 +31,8 @@ Python
 
 
 
-Related topics
---------------
+Other
+-----
 `AzureSolutions on Git <https://the1bit.github.io/AzureSolutions/>`_
 
 About me
@@ -42,8 +42,3 @@ About me
 * Cerifications:
 	* Microsoft Certified Solutions Associate: *Cloud Platform* (MCSA)
 	* TOGAF 9 Foundation certified Person
-
-.. _ListAzureVMs: 
-.. _AzureSolutions on Git: 
-.. _www.the1bit.hu: 
-.. _my GitHub: 
