@@ -94,6 +94,54 @@ def checkSubscription(requiredID, subscription_list):
 			return True
 	return False
 
+# FUNCTION: Get the available metrics of this specific resource
+def listAvailableMetrics(monitoringClient, resource_id, start_time, end_time):
+	#resource_id = "/subscriptions/{0}/resourceGroups/{1}/providers/Microsoft.Compute/virtualMachines/{2}".format(monitoringClient.config.subscription_id, resourcegroup_name, object_name)
+	result = False
+	try:
+		for metric in monitoringClient.metric_definitions.list(resource_id): 
+			# azure.monitor.models.MetricDefinition
+			print("Definition ----- {}: id={}, unit={}".format(metric.name.localized_value,metric.name.value,metric.unit))
+			getMerticDataforInterval(monitoringClient, resource_id, metric.name.value, start_time, end_time, 'PT1H', 'Maximum')
+		result = True
+
+	except:
+		print("Metric not found")
+		result = False
+	finally: 
+		print("_________________________________")
+		return result
+	
+
+# FUNCTION: Get required metric related data for the specified interval
+def getMerticDataforInterval(monitoringClient, resource_id, metric_name, start_time, end_time, time_interval, aggregation_type):
+	# time_interval: 
+	#   PT1M - minutes 
+	#   PT1H - hourly
+	# aggergation_type: 
+	#   Total   
+	#   Maximum 
+	#   Minimum 
+	#   Average
+	try:
+		from azure.mgmt.monitor.models import RuleMetricDataSource;
+		metrics_data = monitoringClient.metrics.list(resource_id, timespan="{}/{}".format(start_time, end_time), interval='{0}'.format(time_interval), metric='{0}'.format(metric_name), aggregation='{0}'.format(aggregation_type));
+		for values in metrics_data.value:
+			# azure.mgmt.monitor.models.Metric
+			print("METRIC ---------- {} ({})".format(values.name.localized_value, values.unit.name))
+			for timeserie in values.timeseries:
+				for data in timeserie.data:
+					# azure.mgmt.monitor.models.MetricData
+					print("VALUE -------------------- {0}: {1}".format(data.time_stamp, data.total))
+		return True
+	except Exception as e:
+		print(e)
+		return False
+
+
+
+##################################
+##### Clients for Classes ########
 # FUNCTION: Create Monitoring client
 def newMonitoringClient(subscription_id):
 	# Load Monitoring client from Azure
@@ -124,53 +172,57 @@ def newResourceManagerClient(subscription_id):
 	except:
 		return False
 
-# FUNCTION: Get the available metrics of this specific resource
-def listAvailableMetrics(monitoringClient, resource_id):
-	for metric in monitoringClient.metric_definitions.list(resource_id): 
-		# azure.monitor.models.MetricDefinition
-		print("{}: id={}, unit={}".format(metric.name.localized_value,metric.name.value,metric.unit))
-		return "{}: id={}, unit={}".format(metric.name.localized_value,metric.name.value,metric.unit)
-
-
+# FUNCTION: Create RecoveryServicesClient client
+def newRecoveryServicesClient(subscription_id):
+	# Load Compute client from Azure
+	try:
+		from azure.mgmt.recoveryservices import RecoveryServicesClient;
+		resourcemanager_client = RecoveryServicesClient(credentials, str(subscription_id), base_url=cloud_environment.endpoints.resource_manager);
+		return resourcemanager_client
+	except:
+		return False
+##### End of Clients for Classes ########
+#########################################
+#########################################################################
 #########################################################################
 ### This part will be executed every time when the file is included #####
 # List of CLOUDS
 choices=['AZURE_GERMAN_CLOUD', 'AZURE_PUBLIC_CLOUD', 'AZURE_CHINA_CLOUD', 'AZURE_US_GOV_CLOUD']
 
 
-global cloud
-cloud = choices[cloud_list(choices)]
-print("%s has been choosen by you" %(cloud))
+global cloudName
+cloudName = choices[cloud_list(choices)]
+print("%s has been choosen by you" %(cloudName))
 
 # Import Azure packages
 ## MSREST for different clouds
-if cloud == "AZURE_GERMAN_CLOUD":
+if cloudName == "AZURE_GERMAN_CLOUD":
 	try:
-		from msrestazure.azure_cloud import AZURE_GERMAN_CLOUD  as cloud_environment
+		from msrestazure.azure_cloud import AZURE_GERMAN_CLOUD as cloud_environment
 	except:
 		pip.main(['install', '--user', 'msrestazure'])
 		from msrestazure.azure_cloud import AZURE_GERMAN_CLOUD as cloud_environment
-elif cloud == "AZURE_PUBLIC_CLOUD":
+elif cloudName == "AZURE_PUBLIC_CLOUD":
 	try:
-		from msrestazure.azure_cloud import AZURE_PUBLIC_CLOUD  as cloud_environment
+		from msrestazure.azure_cloud import AZURE_PUBLIC_CLOUD as cloud_environment
 	except:
 		pip.main(['install', '--user', 'msrestazure'])
 		from msrestazure.azure_cloud import AZURE_PUBLIC_CLOUD as cloud_environment
-elif cloud == "AZURE_CHINA_CLOUD":
+elif cloudName == "AZURE_CHINA_CLOUD":
 	try:
-		from msrestazure.azure_cloud import AZURE_CHINA_CLOUD  as cloud_environment
+		from msrestazure.azure_cloud import AZURE_CHINA_CLOUD as cloud_environment
 	except:
 		pip.main(['install', '--user', 'msrestazure'])
 		from msrestazure.azure_cloud import AZURE_CHINA_CLOUD as cloud_environment
-elif cloud == "AZURE_US_GOV_CLOUD":
+elif cloudName == "AZURE_US_GOV_CLOUD":
 	try:
-		from msrestazure.azure_cloud import AZURE_US_GOV_CLOUD  as cloud_environment
+		from msrestazure.azure_cloud import AZURE_US_GOV_CLOUD as cloud_environment
 	except:
 		pip.main(['install', '--user', 'msrestazure'])
 		from msrestazure.azure_cloud import AZURE_US_GOV_CLOUD as cloud_environment
 else:
 	try:
-		from msrestazure.azure_cloud import AZURE_GERMAN_CLOUD  as cloud_environment
+		from msrestazure.azure_cloud import AZURE_GERMAN_CLOUD as cloud_environment
 	except:
 		pip.main(['install', '--user', 'msrestazure'])
 		from msrestazure.azure_cloud import AZURE_GERMAN_CLOUD as cloud_environment
